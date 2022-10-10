@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://bin.webduino.io
+
+Copyright (c) 2022 by anonymous (http://bin.webduino.io/fimoya/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en">
+<head>
+<style id="jsbin-css">
+body{
+  font-size:70px;
+  line-height:100px;
+  font-weight:bold;
+}
+</style>
+</head>
+<body>
+	alpha:<span id="alpha"></span><br/>
+	beta:<span id="beta"></span><br/>
+	gamma:<span id="gamma"></span><br/>
+<script id="jsbin-javascript">
+if(window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', function(event) {
+    var a = document.getElementById('alpha'),
+        b = document.getElementById('beta'),
+        g = document.getElementById('gamma'),
+        alpha = event.alpha,
+        beta = event.beta,
+        gamma = event.gamma;
+
+    a.innerHTML = Math.round(alpha);
+    b.innerHTML = Math.round(beta);
+    g.innerHTML = Math.round(gamma);
+
+  }, false);
+}else{
+  document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+}
+</script>
+</body>
+</html>
